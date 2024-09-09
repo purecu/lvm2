@@ -1,7 +1,8 @@
 #!/bin/bash
 # LVM recovery for disks moved between systems
 # Written by Christopher "Sean" Briggs <csbriggs at gmail.com>
-# Date: 08/08/2024
+# Date: Sept 8, 2024
+# Updated: Sept 9, 2024  Corrected LV_NAME question.  Thanks to William Arnold for the feedback.
 
 # MIT License
 #
@@ -172,13 +173,13 @@ fi
 if [ $NEED_LV -eq 1 ]; then
 
     VG_NAMEx="vg_recovery_$$"
-    ${ECHO} "Name the Volume Group - no spaces [$VG_NAMEx}: \c"
+    ${ECHO} "Name the Volume Group - no spaces [$VG_NAMEx]: \c"
     read VG_NAME
     if [ ! -n "$VG_NAME" ]; then
         VG_NAME=$VG_NAMEx
     fi
     LV_NAMEx="lv_recovery_$$"
-    ${ECHO} "Name the Volume Group - no spaces [$LV_NAMEx}: \c"
+    ${ECHO} "Name the Logical Volume - no spaces [$LV_NAMEx]: \c"
     read LV_NAME
     if [ ! -n "$LV_NAME" ]; then
         LV_NAME=$LV_NAMEx
