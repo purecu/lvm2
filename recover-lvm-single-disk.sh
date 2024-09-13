@@ -28,6 +28,9 @@
 
 # Provided as is.  Use at your own risk.
 
+# This version currently assumes LUKS or LVM2 is applied directly on the block device
+# the user specifies.  It currenty makes no attempt to identify nor recreate lost
+# partition tables.
 
 ECHO="/usr/bin/echo -e"
 
